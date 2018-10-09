@@ -1,0 +1,6 @@
+/home/yyasar/RiderProjects/csharp_sorting_algorithms/csharp_sorting_algorithms/obj/Debug/csharp_sorting_algorithms.csprojResolveAssemblyReference.cache
+/home/yyasar/RiderProjects/csharp_sorting_algorithms/csharp_sorting_algorithms/obj/Debug/csharp_sorting_algorithms.csproj.CoreCompileInputs.cache
+/home/yyasar/RiderProjects/csharp_sorting_algorithms/csharp_sorting_algorithms/bin/Debug/csharp_sorting_algorithms.exe
+/home/yyasar/RiderProjects/csharp_sorting_algorithms/csharp_sorting_algorithms/bin/Debug/csharp_sorting_algorithms.pdb
+/home/yyasar/RiderProjects/csharp_sorting_algorithms/csharp_sorting_algorithms/obj/Debug/csharp_sorting_algorithms.exe
+/home/yyasar/RiderProjects/csharp_sorting_algorithms/csharp_sorting_algorithms/obj/Debug/csharp_sorting_algorithms.pdb

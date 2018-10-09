@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,6 +21,27 @@ namespace csharp_sorting_algorithms
         
         public static void Main(string[] args)
         {
+            List<int> sayiDeposu = RandomSayiUret(100000, 1, 100000);
+
+
+            Barrier barrier = new Barrier(3);
+
+            Task bubblesort_Gorevi = new Task(() =>
+            {
+                barrier.SignalAndWait();
+                bublesort_siralamasi(sayiDeposu);
+            });
+
+            bubblesort_Gorevi.Start();
+              
+            
+            Task
+
+            
+            
+
+
+
         }
 
 
@@ -118,9 +140,41 @@ namespace csharp_sorting_algorithms
 
 
 
-        } 
+        }
+
+
+
+
+        static List<int> bublesort_siralamasi(List<int> numaraDeposu)
+        {
+
+            if (string.IsNullOrEmpty(bubblesort_siralamasi_baslangic_zamani))
+            {
+                bubblesort_siralamasi_baslangic_zamani = DateTime.Now.ToLongDateString();
+
+            }
+
+            for (int i = 0; i < numaraDeposu.Count-1; i++)
+            {
+
+                for (int j = 1; j < numaraDeposu.Count-i; j++)
+                {
+                    if (numaraDeposu[j]<numaraDeposu[j-1])
+                    {
+                        int temp = numaraDeposu[j - 1];
+                        numaraDeposu[j - 1] = numaraDeposu[j];
+                        numaraDeposu[j] = temp;
+
+                    }
+                        
+                    
+                }
+                
+            }
         
-        
+
+            return numaraDeposu;
+        }
         
         
 
