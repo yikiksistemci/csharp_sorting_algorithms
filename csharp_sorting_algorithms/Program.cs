@@ -16,8 +16,8 @@ namespace csharp_sorting_algorithms
         static string insertion_siralamasi_baslangic_zamani=String.Empty;
         static string quicksort_siralamasi_baslangic_zamani=String.Empty;
         static string bubblesort_siralamasi_baslangic_zamani=String.Empty;
-        
-        
+
+
         
         public static void Main(string[] args)
         {
@@ -33,12 +33,34 @@ namespace csharp_sorting_algorithms
             });
 
             bubblesort_Gorevi.Start();
-              
+
+            Task quicksort_Gorevi = new Task(() =>
+            {
+                barrier.SignalAndWait();
+                quicksort_siralamasi(sayiDeposu,0,sayiDeposu.Count-1);
+            });
             
-            Task
+            
+            
+            Task insertionsort_Gorevi=new Task(() =>
+            {
+                barrier.SignalAndWait();
+                insertion_siralamasi(sayiDeposu);
+            });
+
+
+
+            Task[] gorevler = { bubblesort_Gorevi,quicksort_Gorevi,insertionsort_Gorevi};
+            Task.WaitAll(gorevler);
+            Console.WriteLine("Bubble: {0}\n Quick : {1}\nInsertion:  {2}",bubblesort_siralamasi_baslangic_zamani,quicksort_siralamasi_baslangic_zamani,insertion_siralamasi_baslangic_zamani);
+
 
             
             
+            
+            
+
+
 
 
 
@@ -135,6 +157,11 @@ namespace csharp_sorting_algorithms
                 quicksort_siralamasi(numara_deposu, i, sagDeger);
 
             }
+            
+            
+            
+            
+            
 
             return numara_deposu;
 
@@ -172,6 +199,9 @@ namespace csharp_sorting_algorithms
                 
             }
         
+            
+     
+            
 
             return numaraDeposu;
         }
